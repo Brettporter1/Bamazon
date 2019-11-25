@@ -24,7 +24,21 @@ ${res[i].item_id}. ${res[i].product_name} | ${res[i].department_name} | $${res[i
         promptUser(res);
     })
 }
-
+const buyMore = () => {
+    inquirer.prompt([
+        {
+            type:'confirm',
+            name:'more',
+            message:'Would you like to buy anything else?'
+        }
+    ]).then((answer)=>{
+        if(answer.more){
+            showProducts();
+        }else{
+            process.exit();
+        }
+    })
+}
 const promptUser = (res) => {
     inquirer.prompt([
         {
@@ -65,7 +79,7 @@ const promptUser = (res) => {
                     }else{
                         console.log('Insufficient quantity');
                     }
-                    showProducts();
+                    buyMore();
                 });
             }
         }

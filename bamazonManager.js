@@ -109,9 +109,9 @@ ${res[i].item_id}. ${res[i].product_name} | ${res[i].department_name} | $${res[i
         let query = 'UPDATE products SET ? WHERE ?'
         connection.query( query, [{stock_quantity: answer.updatedInven}, {item_id:answer.addWhat}], (err) =>{
             if (err) throw err;
-            console.log('Product has been updated.')
+            console.log('Product has been updated.');
+            anotherAction();
         })
-        anotherAction();
     })
 })
 };
@@ -145,10 +145,10 @@ const newProducts = () =>{
         },
         (err)=>{
             if(err)throw err;
-            console.log('Product has been added')
+            console.log('Product has been added');
+            anotherAction();
         }
         )
-        anotherAction();
     })
 
 }
