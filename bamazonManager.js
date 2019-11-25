@@ -145,7 +145,7 @@ const newProducts = () =>{
         },
         (err)=>{
             if(err)throw err;
-            console.log('')
+            console.log('Product has been added')
         }
         )
         anotherAction();
